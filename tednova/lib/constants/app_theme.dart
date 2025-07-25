@@ -88,47 +88,56 @@ class AppTheme {
           fontWeight: FontWeight.w500,
           color: textPrimary,
         ),
-        titleLarge: GoogleFonts.spaceMono(
+        titleLarge: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 20,
           fontWeight: FontWeight.w600,
           color: textPrimary,
         ),
-        titleMedium: GoogleFonts.spaceMono(
+        titleMedium: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 18,
           fontWeight: FontWeight.w500,
           color: textPrimary,
         ),
-        titleSmall: GoogleFonts.spaceMono(
+        titleSmall: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 16,
           fontWeight: FontWeight.w500,
           color: textSecondary,
         ),
-        bodyLarge: GoogleFonts.spaceMono(
+        bodyLarge: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 16,
           fontWeight: FontWeight.normal,
           color: textPrimary,
         ),
-        bodyMedium: GoogleFonts.spaceMono(
+        bodyMedium: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 14,
           fontWeight: FontWeight.normal,
           color: textSecondary,
         ),
-        bodySmall: GoogleFonts.spaceMono(
+        bodySmall: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 12,
           fontWeight: FontWeight.normal,
           color: textSecondary,
         ),
-        labelLarge: GoogleFonts.spaceMono(
+        labelLarge: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 14,
           fontWeight: FontWeight.w500,
           color: textPrimary,
         ),
-        labelMedium: GoogleFonts.spaceMono(
+        labelMedium: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 12,
           fontWeight: FontWeight.w500,
           color: textSecondary,
         ),
-        labelSmall: GoogleFonts.spaceMono(
+        labelSmall: const TextStyle(
+          fontFamily: 'Poppins',
           fontSize: 10,
           fontWeight: FontWeight.w500,
           color: textSecondary,
