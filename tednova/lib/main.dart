@@ -17,7 +17,7 @@ import 'screens/admin_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   // Initialize Firebase (for web, this will be handled by firebase-config.js)
   try {
     await Firebase.initializeApp(
@@ -33,7 +33,7 @@ void main() async {
   } catch (e) {
     print('Firebase initialization error: $e');
   }
-  
+
   runApp(const TeddyNovaApp());
 }
 

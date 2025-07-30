@@ -2,6 +2,183 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
+  static ThemeData get lightTheme {
+    return ThemeData(
+      useMaterial3: true,
+      brightness: Brightness.light,
+      primaryColor: primaryColor,
+      scaffoldBackgroundColor: Colors.white,
+      colorScheme: const ColorScheme.light(
+        primary: primaryColor,
+        secondary: secondaryColor,
+        tertiary: accentColor,
+        surface: Colors.white,
+        background: Colors.white,
+        error: errorColor,
+        onPrimary: Colors.white,
+        onSecondary: Colors.black,
+        onSurface: Colors.black,
+        onBackground: Colors.black,
+        onError: Colors.white,
+      ),
+
+      // Typography
+      textTheme: TextTheme(
+        displayLarge: GoogleFonts.orbitron(
+          fontSize: 64,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+          letterSpacing: -1.5,
+        ),
+        displayMedium: GoogleFonts.orbitron(
+          fontSize: 48,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+          letterSpacing: -0.5,
+        ),
+        displaySmall: GoogleFonts.orbitron(
+          fontSize: 36,
+          fontWeight: FontWeight.w600,
+          color: Colors.black,
+        ),
+        headlineLarge: GoogleFonts.orbitron(
+          fontSize: 32,
+          fontWeight: FontWeight.w600,
+          color: Colors.black,
+        ),
+        headlineMedium: GoogleFonts.orbitron(
+          fontSize: 28,
+          fontWeight: FontWeight.w500,
+          color: Colors.black,
+        ),
+        headlineSmall: GoogleFonts.orbitron(
+          fontSize: 24,
+          fontWeight: FontWeight.w500,
+          color: Colors.black,
+        ),
+        titleLarge: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 20,
+          fontWeight: FontWeight.w600,
+          color: Colors.black,
+        ),
+        titleMedium: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+          color: Colors.black,
+        ),
+        titleSmall: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+          color: textSecondary,
+        ),
+        bodyLarge: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+          color: Colors.black,
+        ),
+        bodyMedium: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 14,
+          fontWeight: FontWeight.normal,
+          color: textSecondary,
+        ),
+        bodySmall: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 12,
+          fontWeight: FontWeight.normal,
+          color: textSecondary,
+        ),
+        labelLarge: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 14,
+          fontWeight: FontWeight.w500,
+          color: Colors.black,
+        ),
+        labelMedium: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 12,
+          fontWeight: FontWeight.w500,
+          color: textSecondary,
+        ),
+        labelSmall: const TextStyle(
+          fontFamily: 'Poppins',
+          fontSize: 10,
+          fontWeight: FontWeight.w500,
+          color: textSecondary,
+        ),
+      ),
+
+      // Card Theme
+      cardTheme: CardThemeData(
+        color: Colors.white,
+        elevation: 8,
+        shadowColor: primaryColor.withOpacity(0.1),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side: BorderSide(
+            color: primaryColor.withOpacity(0.1),
+            width: 1,
+          ),
+        ),
+      ),
+
+      // AppBar Theme
+      appBarTheme: AppBarTheme(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        centerTitle: true,
+        titleTextStyle: GoogleFonts.orbitron(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+          color: Colors.black,
+        ),
+        iconTheme: const IconThemeData(color: primaryColor),
+      ),
+
+      // Elevated Button Theme
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: primaryColor,
+          foregroundColor: Colors.white,
+          elevation: 8,
+          shadowColor: primaryColor.withOpacity(0.2),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(12),
+          ),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+          textStyle: GoogleFonts.spaceMono(
+            fontSize: 14,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+
+      // Input Decoration Theme
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: Colors.white,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: primaryColor.withOpacity(0.2)),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: BorderSide(color: primaryColor.withOpacity(0.2)),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(12),
+          borderSide: const BorderSide(color: primaryColor, width: 2),
+        ),
+        labelStyle: GoogleFonts.spaceMono(color: textSecondary),
+        hintStyle: GoogleFonts.spaceMono(color: textSecondary.withOpacity(0.7)),
+      ),
+    );
+  }
+
   // Space-inspired color palette
   static const Color primaryColor = Color(0xFF00D4FF); // Cosmic blue
   static const Color secondaryColor = Color(0xFF7B2CBF); // Deep purple
@@ -53,7 +230,7 @@ class AppTheme {
         onBackground: textPrimary,
         onError: Colors.white,
       ),
-      
+
       // Typography
       textTheme: TextTheme(
         displayLarge: GoogleFonts.orbitron(
@@ -143,9 +320,9 @@ class AppTheme {
           color: textSecondary,
         ),
       ),
-      
+
       // Card Theme
-      cardTheme: CardTheme(
+      cardTheme: CardThemeData(
         color: cardColor,
         elevation: 8,
         shadowColor: primaryColor.withOpacity(0.3),
@@ -157,7 +334,7 @@ class AppTheme {
           ),
         ),
       ),
-      
+
       // AppBar Theme
       appBarTheme: AppBarTheme(
         backgroundColor: Colors.transparent,
@@ -170,7 +347,7 @@ class AppTheme {
         ),
         iconTheme: const IconThemeData(color: primaryColor),
       ),
-      
+
       // Elevated Button Theme
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
@@ -188,7 +365,7 @@ class AppTheme {
           ),
         ),
       ),
-      
+
       // Input Decoration Theme
       inputDecorationTheme: InputDecorationTheme(
         filled: true,

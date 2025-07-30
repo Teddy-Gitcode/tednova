@@ -25,7 +25,7 @@ class _TeddyNovaNavigationBarState extends State<TeddyNovaNavigationBar> {
   @override
   Widget build(BuildContext context) {
     final isMobile = ResponsiveBreakpoints.of(context).smallerThan(TABLET);
-    
+
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       decoration: BoxDecoration(
@@ -53,12 +53,12 @@ class _TeddyNovaNavigationBarState extends State<TeddyNovaNavigationBar> {
         children: [
           // Logo
           _buildLogo(),
-          
+
           const Spacer(),
-          
+
           // Navigation items
           if (!isMobile) ..._buildDesktopNav(),
-          
+
           // Mobile menu button
           if (isMobile) _buildMobileMenuButton(),
         ],
@@ -69,38 +69,38 @@ class _TeddyNovaNavigationBarState extends State<TeddyNovaNavigationBar> {
   Widget _buildLogo() {
     return Row(
       children: [
-        Container(
-          width: 40,
-          height: 40,
-          decoration: BoxDecoration(
-            gradient: AppTheme.primaryGradient,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: AppTheme.primaryColor.withOpacity(0.5),
-                blurRadius: 10,
-                spreadRadius: 2,
-              ),
-            ],
-          ),
-          child: const Icon(
-            Icons.auto_awesome,
-            color: Colors.black,
-            size: 24,
-          ),
-        ).animate().scale(delay: 300.ms),
-        
+        // Container(
+        //   width: 40,
+        //   height: 40,
+        //   decoration: BoxDecoration(
+        //     gradient: AppTheme.primaryGradient,
+        //     borderRadius: BorderRadius.circular(20),
+        //     boxShadow: [
+        //       BoxShadow(
+        //         color: AppTheme.primaryColor.withOpacity(0.5),
+        //         blurRadius: 10,
+        //         spreadRadius: 2,
+        //       ),
+        //     ],
+        //   ),
+        //   child: const Icon(
+        //     Icons.auto_awesome,
+        //     color: Colors.black,
+        //     size: 24,
+        //   ),
+        // ).animate().scale(delay: 300.ms),
+
         const SizedBox(width: 12),
-        
+
         Text(
           'TeddyNova',
           style: Theme.of(context).textTheme.titleLarge?.copyWith(
-            fontWeight: FontWeight.bold,
-            foreground: Paint()
-              ..shader = AppTheme.primaryGradient.createShader(
-                const Rect.fromLTWH(0, 0, 200, 70),
+                fontWeight: FontWeight.bold,
+                foreground: Paint()
+                  ..shader = AppTheme.primaryGradient.createShader(
+                    const Rect.fromLTWH(0, 0, 200, 70),
+                  ),
               ),
-          ),
         ).animate().slideX(delay: 500.ms),
       ],
     );
@@ -109,7 +109,7 @@ class _TeddyNovaNavigationBarState extends State<TeddyNovaNavigationBar> {
   List<Widget> _buildDesktopNav() {
     return _navItems.map((item) {
       final isHovered = _hoveredItem == item.label;
-      
+
       return MouseRegion(
         onEnter: (_) => setState(() => _hoveredItem = item.label),
         onExit: (_) => setState(() => _hoveredItem = ''),
@@ -121,9 +121,7 @@ class _TeddyNovaNavigationBarState extends State<TeddyNovaNavigationBar> {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
               border: Border.all(
-                color: isHovered 
-                    ? AppTheme.primaryColor 
-                    : Colors.transparent,
+                color: isHovered ? AppTheme.primaryColor : Colors.transparent,
                 width: 1,
               ),
               gradient: isHovered
@@ -148,8 +146,8 @@ class _TeddyNovaNavigationBarState extends State<TeddyNovaNavigationBar> {
               children: [
                 Icon(
                   item.icon,
-                  color: isHovered 
-                      ? AppTheme.primaryColor 
+                  color: isHovered
+                      ? AppTheme.primaryColor
                       : AppTheme.textSecondary,
                   size: 18,
                 ),
@@ -157,13 +155,12 @@ class _TeddyNovaNavigationBarState extends State<TeddyNovaNavigationBar> {
                 Text(
                   item.label,
                   style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                    color: isHovered 
-                        ? AppTheme.primaryColor 
-                        : AppTheme.textSecondary,
-                    fontWeight: isHovered 
-                        ? FontWeight.w600 
-                        : FontWeight.normal,
-                  ),
+                        color: isHovered
+                            ? AppTheme.primaryColor
+                            : AppTheme.textSecondary,
+                        fontWeight:
+                            isHovered ? FontWeight.w600 : FontWeight.normal,
+                      ),
                 ),
               ],
             ),
